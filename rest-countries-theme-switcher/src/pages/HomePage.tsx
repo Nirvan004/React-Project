@@ -15,7 +15,7 @@ export default function HomePage() {
   useEffect(() => {
     const fetchCountries = async () => {
       try {
-        const res = await fetch("https://restcountries.com/v3.1/all")
+        const res = await fetch("https://restcountries.com/v3.1/all?fields=name,cca3,capital,region,population,flags")
         if (!res.ok) throw new Error("Failed to fetch countries")
         const data: Country[] = await res.json()
         setCountries(data)
